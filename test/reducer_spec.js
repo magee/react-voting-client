@@ -69,7 +69,7 @@ describe('Reducer', () => {
   it('handles VOTE by setting hasVoted', () => {
     const state = fromJS({
       vote: {
-        pair: ['trainspotting', '28 Days Later'],
+        pair: ['Trainspotting', '28 Days Later'],
         tally: {'Trainspotting': 1}
       }
     });
