@@ -1,3 +1,6 @@
+var precss       = require('precss');
+var autoprefixer = require('autoprefixer');
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -7,10 +10,17 @@ module.exports = {
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel'
+    },
+    {
+      test:   /\.css$/,
+      loader: "style-loader!css-loader!postcss-loader"
     }]
   },
   resolve: {
     extensions: [', '.js', '.jsx']
+  },
+  postcss: function () {
+    return [precss, autoprefixer];
   },
   output: {
     path: __dirname + '/dist',
